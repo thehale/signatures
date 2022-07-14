@@ -11,7 +11,7 @@ import signatures
 
 
 def test_version() -> None:
-    assert signatures.__version__ == "0.3.0"
+    assert signatures.__version__ == "0.3.1"
 
 
 class Test__FunctionSignatureEquality:
