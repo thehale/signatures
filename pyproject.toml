@@ -14,7 +14,7 @@ keywords = [ "introspection", "signatures", "functions", "validation" ]
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = "^7.1"
 pre-commit = "^2.20.0"
 liccheck = "^0.7.1"
 mypy = "^0.961"
