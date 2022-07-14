@@ -4,7 +4,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 from typing import *
 import inspect
@@ -24,29 +24,44 @@ def equal(function: Callable[..., Any], otherFunction: Callable[..., Any]) -> bo
 
 
 def compatible(function: Callable[..., Any], otherFunction: Callable[..., Any]) -> bool:
-    are_compatible = True
     signature = inspect.signature(function)
     otherSignature = inspect.signature(otherFunction)
+    are_compatible_params = __are_parameters_compatible(signature, otherSignature)
+    are_compatible_returns = __are_return_types_compatible(signature, otherSignature)
+    return are_compatible_params and are_compatible_returns
 
+
+def __are_parameters_compatible(
+    signature: inspect.Signature, otherSignature: inspect.Signature
+) -> bool:
+    are_compatible = True
     for key in signature.parameters.keys():
         if key in otherSignature.parameters.keys():
             paramType = signature.parameters[key].annotation
             otherParamType = otherSignature.parameters[key].annotation
-            equivalent = __are_parameters_equivalent(paramType, otherParamType)
+            equivalent = __are_types_compatible(paramType, otherParamType)
             are_compatible = are_compatible and equivalent
         else:
             are_compatible = False
     return are_compatible
 
 
-def __are_parameters_equivalent(param1: Type[Any], param2: Type[Any]) -> bool:
-    equal = __are_parameters_equal(param1, param2)
-    subclass = __issubtype(param1, param2)
+def __are_return_types_compatible(
+    signature: inspect.Signature, otherSignature: inspect.Signature
+) -> bool:
+    return __are_types_compatible(
+        signature.return_annotation, otherSignature.return_annotation
+    )
+
+
+def __are_types_compatible(subtype: Type[Any], supertype: Type[Any]) -> bool:
+    equal = __are_types_equal(subtype, supertype)
+    subclass = __issubtype(subtype, supertype)
     return equal or subclass
 
 
-def __are_parameters_equal(param1: Type[Any], param2: Type[Any]) -> bool:
-    return str(param1) == str(param2)
+def __are_types_equal(subtype: Type[Any], supertype: Type[Any]) -> bool:
+    return str(subtype) == str(supertype)
 
 
 def __issubtype(subtype: Type[Any], supertype: Type[Any]) -> bool:

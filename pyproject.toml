@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "signatures"
-version = "0.2.0"
+version = "0.3.0"
 description = "Utilities for inspecting and comparing Python function signatures."
 authors = ["Joseph Hale <me@jhale.dev>"]
 license = "MPL-2.0"

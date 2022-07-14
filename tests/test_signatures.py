@@ -5,11 +5,13 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 from typing import *
 
+import pytest
+
 import signatures
 
 
 def test_version() -> None:
-    assert signatures.__version__ == "0.2.0"
+    assert signatures.__version__ == "0.3.0"
 
 
 class Test__FunctionSignatureEquality:
@@ -83,7 +85,26 @@ class Test__FunctionSignatureEquality:
 
 class Test__FunctionSignatureCompatibility:
     class Test__CompatibleGiven:
-        def test__the_same_generic(self) -> None:
+        def test__the_same_signature(self) -> None:
+            def foo(thing: int) -> None:
+                pass
+
+            def bar(thing: int) -> None:
+                pass
+
+            assert signatures.compatible(foo, bar)
+
+        @pytest.mark.xfail(reason="Known issue. To fix in a future update.")
+        def test__the_same_signature_with_Any(self) -> None:
+            def foo(thing: Any) -> None:
+                pass
+
+            def bar(thing: Any) -> None:
+                pass
+
+            assert signatures.compatible(foo, bar)
+
+        def test__the_same_generic_signature(self) -> None:
             T = TypeVar("T")
 
             def foo(thing: T) -> None:
@@ -171,6 +192,42 @@ class Test__FunctionSignatureCompatibility:
 
             assert signatures.compatible(foo, bar)
 
+        def test__returns_using_generic_classes(self) -> None:
+            def foo(thing: int) -> List[int]:
+                pass
+
+            def bar(thing: int) -> List[int]:
+                pass
+
+            assert signatures.compatible(foo, bar)
+
+        def test__returns_using_generic_classes_with_subtype(self) -> None:
+            def foo(thing: int) -> List[bool]:
+                pass
+
+            def bar(thing: int) -> List[int]:
+                pass
+
+            assert signatures.compatible(foo, bar)
+
+        def test__returns_using_generic_classes_with_multiple_subtypes(self) -> None:
+            def foo(thing: int) -> Tuple[bool, str]:
+                pass
+
+            def bar(thing: int) -> Tuple[int, str]:
+                pass
+
+            assert signatures.compatible(foo, bar)
+
+        def test__returns_using_nested_generic_classes(self) -> None:
+            def foo(thing: int) -> List[Tuple[bool, str]]:
+                pass
+
+            def bar(thing: int) -> List[Tuple[int, str]]:
+                pass
+
+            assert signatures.compatible(foo, bar)
+
     class Test__IncompatibleGiven:
         def test__different_parameter_names(self) -> None:
             def foo(thing1: int) -> None:
@@ -195,6 +252,15 @@ class Test__FunctionSignatureCompatibility:
                 pass
 
             def bar(thing: str) -> None:
+                pass
+
+            assert not signatures.compatible(foo, bar)
+
+        def test__different_return_types(self) -> None:
+            def foo(thing: int) -> int:
+                pass
+
+            def bar(thing: int) -> str:
                 pass
 
             assert not signatures.compatible(foo, bar)
