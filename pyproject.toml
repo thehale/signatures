@@ -18,7 +18,7 @@ pytest = "^7.1"
 pre-commit = "^2.20.0"
 liccheck = "^0.7.2"
 mypy = "^0.982"
-black = "^22.8.0"
+black = "^22.10.0"
 
 [tool.liccheck]
 authorized_licenses = [
