@@ -125,7 +125,7 @@ python-versions = "*"
 
 [[package]]
 name = "liccheck"
-version = "0.7.2"
+version = "0.7.3"
 description = "Check python packages from requirement.txt and report issues"
 category = "dev"
 optional = false
@@ -348,7 +348,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "81099001a85881d431ce4ec76d803cfa11c4fd6079d7c6da2bde77f124f1e715"
+content-hash = "48d9ef7884c6c9dad9bc82998c1092449beb13162f9d78edf5b32472fadc60ba"
 
 [metadata.files]
 attrs = [
@@ -415,8 +415,8 @@ iniconfig = [
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
 liccheck = [
-    {file = "liccheck-0.7.2-py2.py3-none-any.whl", hash = "sha256:a50d212b943d119f61d822080e0b7bcefbae4c3b7cc7b54b47b465c191bfc8aa"},
-    {file = "liccheck-0.7.2.tar.gz", hash = "sha256:1961ee9bd9ae72c21f79da6db3a2048536f0912f4c5fde0f0c062d65ea5fbf0a"},
+    {file = "liccheck-0.7.3-py2.py3-none-any.whl", hash = "sha256:3e7185ed89700cfde85e566f9d92b84222618e05126503848f00c81849135e5e"},
+    {file = "liccheck-0.7.3.tar.gz", hash = "sha256:aeda7ef23705619146080a3056ba54d63ee0164807005119f94ab25ab34cd1b2"},
 ]
 mypy = [
     {file = "mypy-0.982-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:5085e6f442003fa915aeb0a46d4da58128da69325d8213b4b35cc7054090aed5"},
