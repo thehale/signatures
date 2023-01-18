@@ -181,14 +181,14 @@ files = [
 
 [[package]]
 name = "liccheck"
-version = "0.8.0"
+version = "0.8.3"
 description = "Check python packages from requirement.txt and report issues"
 category = "dev"
 optional = false
 python-versions = ">=2.7"
 files = [
-    {file = "liccheck-0.8.0-py2.py3-none-any.whl", hash = "sha256:b8ad0a8036a7bcff7b87c0f32de250826ea2ee1744774bda64dc4639e62c115f"},
-    {file = "liccheck-0.8.0.tar.gz", hash = "sha256:a22e2bca71f46dc08601e20ffa4d0cd4ebf9d1ae042e38edc2a9cf69cd122a7d"},
+    {file = "liccheck-0.8.3-py2.py3-none-any.whl", hash = "sha256:272ef1035c566824a3b9becf6a100f495de1492e33f11e88a21d5a3fee80436c"},
+    {file = "liccheck-0.8.3.tar.gz", hash = "sha256:317015ba05d36dfdf4a366de67b7b8658fc7caedccb5f019ed41dae55897de2b"},
 ]
 
 [package.dependencies]
