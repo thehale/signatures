@@ -8,7 +8,7 @@
 
 # Signatures
 
-Utitilties for assessing Python function signature equality and compatibility,
+Utilities for assessing Python function signature equality and compatibility,
 with the latter accounting for subtypes (including Generics!)
 
 ## Examples
