@@ -177,14 +177,14 @@ files = [
 
 [[package]]
 name = "liccheck"
-version = "0.8.3"
+version = "0.9.0"
 description = "Check python packages from requirement.txt and report issues"
 category = "dev"
 optional = false
 python-versions = ">=2.7"
 files = [
-    {file = "liccheck-0.8.3-py2.py3-none-any.whl", hash = "sha256:272ef1035c566824a3b9becf6a100f495de1492e33f11e88a21d5a3fee80436c"},
-    {file = "liccheck-0.8.3.tar.gz", hash = "sha256:317015ba05d36dfdf4a366de67b7b8658fc7caedccb5f019ed41dae55897de2b"},
+    {file = "liccheck-0.9.0-py2.py3-none-any.whl", hash = "sha256:6e12a061dae49b6bd58ccc2734f92614e8e67a195153eb80d4fa7982bd0199ff"},
+    {file = "liccheck-0.9.0.tar.gz", hash = "sha256:38b50c1c944a2a2d3e2fcebef347fa889fb941b606d39f8bda9254aeef69fc7f"},
 ]
 
 [package.dependencies]
@@ -519,4 +519,4 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "3a52ad38f8225edb6814f8b5eda069a883f98094fa2d7024a8d674258a31d960"
+content-hash = "4d656dc862f710e6c44d2b47a7e39dd299355e695aa08e42dfe5de24b7498322"
