@@ -11,6 +11,11 @@
 Utilities for assessing Python function signature equality and compatibility,
 with the latter accounting for subtypes (including Generics!)
 
+<!-- BADGES -->
+[![](https://badgen.net/github/license/thehale/signatures)](https://github.com/thehale/signatures/blob/master/LICENSE)
+[![](https://badgen.net/badge/icon/Sponsor/pink?icon=github&label)](https://github.com/sponsors/thehale)
+[![](https://badgen.net/badge/icon/Follow%20@jhaledev/1DA1F2?icon=twitter&label)](https://twitter.com/intent/user?screen_name=jhaledev)
+
 ## Examples
 See the [test suite](/tests/test_signatures.py) for a full set of examples.
 
