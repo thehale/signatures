@@ -17,7 +17,7 @@ python = "^3.8"
 pytest = "^7.2"
 pre-commit = ">=2.20,<4.0"
 liccheck = ">=0.8,<0.10"
-mypy = ">=0.991,<1.8"
+mypy = ">=0.991,<1.9"
 black = ">=22.12,<24.0"
 
 [tool.liccheck]
