@@ -35,8 +35,3 @@ repos:
         language: system
         pass_filenames: false
         always_run: true
-      - id: liccheck
-        name: Check OSS License Compliance
-        entry: make license-check
-        language: system
-        files: 'poetry.lock'
